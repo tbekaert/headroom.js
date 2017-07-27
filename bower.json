@@ -9,7 +9,6 @@
     "dist/angular.headroom.min.js"
   ],
   "ignore": [
-    "**/.*",
     "node_modules",
     "components",
     "spec",
