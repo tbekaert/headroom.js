@@ -61,6 +61,7 @@ function Headroom (elem, options) {
   this.offset           = options.offset;
   this.scroller         = options.scroller;
   this.initialised      = false;
+  this.onUpdate         = options.onUpdate;
   this.onPin            = options.onPin;
   this.onUnpin          = options.onUnpin;
   this.onTop            = options.onTop;
@@ -344,6 +345,8 @@ Headroom.prototype = {
     if(this.isOutOfBounds(currentScrollY)) { // Ignore bouncy scrolling in OSX
       return;
     }
+
+    this.onUpdate();
 
     if (currentScrollY <= this.offset ) {
       this.top();
